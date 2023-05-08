@@ -1,0 +1,148 @@
+header img{
+    max-width:160px ;
+}
+
+.underline{
+    border-bottom: 3px solid green;
+}
+
+/*element start*/
+
+.element .text{
+    top: 25%;
+    left: 25%;
+}
+
+/*element end*/
+
+/* form1 styling start */
+
+form input{
+    border-radius: 5px;
+}
+
+.button{
+    font-size: 20px;
+}
+
+form button:active{
+    box-shadow: 3px 3px 3px #999999 inset;
+}
+
+.menu{
+    height: 150px;
+    overflow-y: scroll;
+}
+
+.quote-img{
+    color: #fff;
+    -moz-user-select: none;
+    -o-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.quote-img > input{
+    overflow:hidden; 
+    color: #222;
+    align-items: center;
+}
+
+.quote-img > input{
+    overflow:hidden;
+    color: #222;
+}
+
+.color-btn{
+    border: 1px solid black;
+}
+
+.downloadBtn:active{
+    box-shadow: 3px 3px 3px #999999 inset;
+}
+
+.c-img{
+    max-width: 100%;
+}
+
+/* forms1 styling end */
+
+/* quoteGenerator styling start */
+
+.about-quote{
+    background-color: #e4e6e9;
+}
+
+.speech{
+    line-height: 2rem;
+}
+
+.quote-img{
+    position: relative;
+    color: #fff;
+}
+
+.quote{ 
+    position: absolute;
+    width: 60%;
+    left: 20%;
+    top: 5%;
+    color: #444;
+}
+
+.author{
+    position: absolute;
+    width: 70%;
+    max-height: 80px;
+    left: 15%;
+    top:80%;
+    color: #444;
+}
+
+.motivate{
+    font-size: 24px;
+}
+
+#c{
+    width: 80%;
+    text-align: center;
+    margin: 10px auto;
+    font-size: 40px;
+    padding: 16px;
+}
+
+/* quoteGenerator styling end */
+
+/*Our methods start*/
+
+.our-methods-icon{
+    background-color: #ebf7ec;
+    width: 20%;
+    height: 100px;
+}
+
+/*Our methods end*/
+
+/*contact us start*/
+
+.contact-us{
+    max-width: 800px;
+}
+
+/*contact us end*/
+
+/*footer start*/
+
+.footer{
+    background-color: #2a2e37;
+}
+
+.footer .titles{
+    color: green;
+}
+
+.footer .btn{
+    background-color: green;
+}
+
+/*footer end*/
