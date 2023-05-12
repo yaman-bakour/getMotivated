@@ -5,7 +5,7 @@ import {GoLocation} from "react-icons/go"
 const Footer = () => {
     return ( 
         <div className='mt-3 p-5 footer'>
-            <img className='mb-5 w-25' src={require("../imgs/logobot.png")} alt="" />
+            <img className='footer-img mb-5' src={require("../imgs/logobot.png")} alt="" />
             <div className='text-light mb-5'>
                 <p><GoLocation color='green' className='mr-3' />08 W 36th st,New York,NY 10001</p>
                 <p><FaPhoneAlt color='green' className='mr-3'/>1200 300 9000</p>

@@ -10,7 +10,7 @@ const Methods = () => {
                 <h1 className='underline w-50'></h1>
                 </div>
                 <div className='row no-gutters'>
-                    <div className='col-lg-6 col-12 mb-5'>
+                    <div className='col-lg-6 col-12 mb-5 p-3'>
                         <div className='row'>
                             <div className='col-4 d-flex mt-2 justify-content-center our-methods-icon'>
                                 <BsBook size="3em" color='#39b248' className='mt-4'/>
@@ -23,7 +23,7 @@ const Methods = () => {
                             </div>
                     </div>
 
-                    <div className='col-lg-6 col-12 mb-5'>
+                    <div className='col-lg-6 col-12 mb-5 p-3'>
                         <div className='row'>
                             <div className='col-4 d-flex mt-2 justify-content-center  our-methods-icon'>
                                 <BsSearch size="3em" color='#39b248' className='mt-4'/>
@@ -36,7 +36,7 @@ const Methods = () => {
                         </div>
                     </div>
 
-                    <div className='col-lg-6 col-12 mb-5'>
+                    <div className='col-lg-6 col-12 mb-5 p-3'>
                         <div className='row'>
                                 <div className='col-4 d-flex mt-2 justify-content-center  our-methods-icon'>
                                 <BsFillGearFill size="3em" color='#39b248' className='mt-4'/>
@@ -49,7 +49,7 @@ const Methods = () => {
                             </div>
                         </div>
 
-                    <div className='col-lg-6 col-12 mb-5'>
+                    <div className='col-lg-6 col-12 mb-5 p-3'>
                             <div className='row'>
                                 <div className='col-4 d-flex mt-2 justify-content-center  our-methods-icon'>
                                 <BsPencilFill size="3em" color='#39b248' className='mt-4'/>
@@ -62,7 +62,7 @@ const Methods = () => {
                             </div>
                         </div>
 
-                    <div className='col-lg-6 col-12 mb-5'>
+                    <div className='col-lg-6 col-12 mb-5 p-3'>
                         <div className='row'>
                                 <div className='col-4 d-flex mt-2 justify-content-center  our-methods-icon'>
                                 <BsFillCameraVideoFill size="3em" color='#39b248' className='mt-4'/>
@@ -75,7 +75,7 @@ const Methods = () => {
                             </div>
                         </div>
 
-                    <div className='col-lg-6 col-12 mb-5'>
+                    <div className='col-lg-6 col-12 mb-5 p-3'>
                         <div className='row'>
                                 <div className='col-4 d-flex mt-2 justify-content-center  our-methods-icon'>
                                 <BiHappy size="3em" color='#39b248' className='mt-4'/>

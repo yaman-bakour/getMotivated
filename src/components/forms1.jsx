@@ -155,7 +155,7 @@ const Forms = (props) => {
        
                 <form className='row justify-content-around m-4' id='form'>
 
-                    <div className='col-5 m-3 p-0'>
+                    <div className='col-md-5 m-3 p-0'>
                         <div className='input-group'>
                             <OverlayTrigger trigger="click" placement="right" overlay={popover}>
                                 <Button id="color-btn" 
@@ -173,7 +173,7 @@ const Forms = (props) => {
                         </div>
                     </div>
                     
-                    <div className='col-5 m-3 p-0'>
+                    <div className='col-md-5 m-3 p-0'>
                             <div className='input-group'>
                                 <div className='input-group-prepend'>
                                     <button className='btn btn-outline-secondary dropdown-toggle' type='button' 
@@ -200,7 +200,7 @@ const Forms = (props) => {
 
                     <input 
                     type="text" 
-                    className='col-5 m-3'
+                    className='col-md-5 m-3'
                     value={input.fontSize}
                     placeholder="text size e.g. 16px"
                     name='fontSize'
@@ -212,8 +212,8 @@ const Forms = (props) => {
                 </form>
 
                 <div className='row justify-content-between  m-3'>
-                    <div className='col-2 btn btn-outline-secondary m-3' onClick={addQuote}>Add new quote</div>
-                    <div className='col-2 btn btn-outline-danger m-3' onClick={deleteQoute}>delete last quote</div>
+                    <div className='col-md-2 col-3 btn btn-outline-secondary m-3' onClick={addQuote}>Add new quote</div>
+                    <div className='col-md-2 col-3 btn btn-outline-danger m-3' onClick={deleteQoute}>delete last quote</div>
                     <button onClick={handleclick} className='button btn btn-block mb-3 bg-success text-light'>Generate different image</button>
                 </div>
 

@@ -15,8 +15,36 @@ header img{
 
 /*element end*/
 
-/* form1 styling start */
+/*navigation start*/
 
+.brand-img{
+    width:50%;
+}
+
+@media(max-width : 768px ){
+    .brand-img{
+    width:100%;
+}
+}
+
+/*navigation end*/
+
+
+/*element start*/
+
+.push-yourself{
+    font-size:32px;
+}
+
+@media(max-width : 768px){
+    .push-yourself{
+    font-size:16px;
+}
+}
+
+/*element end*/
+
+/* form1 styling start */
 form input{
     border-radius: 5px;
 }
@@ -87,7 +115,8 @@ form button:active{
     width: 60%;
     left: 20%;
     top: 5%;
-    color: #444;
+    color: white;
+    font-size:32px;
 }
 
 .author{
@@ -96,7 +125,14 @@ form button:active{
     max-height: 80px;
     left: 15%;
     top:80%;
-    color: #444;
+    color: white;
+    font-size:32px;
+}
+
+@media (max-width : 768px){
+    .author , .quote{
+    font-size:20px;
+}
 }
 
 .motivate{
@@ -135,6 +171,16 @@ form button:active{
 
 .footer{
     background-color: #2a2e37;
+}
+
+.footer-img{
+    width:25%;
+}
+
+@media(max-width : 768px){
+.footer-img{
+    width:50%
+}
 }
 
 .footer .titles{

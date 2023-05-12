@@ -8,7 +8,7 @@ const Navigation = (props) => {
             <div className='navigation'>
                 <nav className='navbar navbar-expand-lg navbar-light bg-light pr-5'>
                     <a className='ps-3 navbar-brand w-50' href="">
-                        <img className='w-50' src={require(`../imgs/${props.data[0].logoes.logotop}`)} alt="" />
+                        <img className='brand-img' src={require(`../imgs/${props.data[0].logoes.logotop}`)} alt="" />
                     </a>
                     <button className='navbar-toggler' data-toggle="collapse" data-target='#nav'>
                         <span className='navbar-toggler-icon'></span>

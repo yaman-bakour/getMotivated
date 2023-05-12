@@ -7,7 +7,7 @@ import React, { Component } from 'react';
                 <div className='d-flex justify-content-center mb-5'>
                     <h1 className='underline w-25'></h1>
                 </div>
-                <div className='row g-0 pl-5'>
+                <div className='row g-0'>
                     <div className='col-5 mr-4'>
                         <input className='w-100 mb-4 p-2' type="text" placeholder='Your Name'/>
                         <input className='w-100 mb-4 p-2' type="email" placeholder='Your Email'/>

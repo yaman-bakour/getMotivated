@@ -8,7 +8,7 @@ const InputFields = (props) => {
                 type="text"
                 key={index}
                 value={a}
-                className="text col-5 m-3"
+                className="text col-md-5 m-3"
                 placeholder={`qoute${index + 1}`}
                 name={`${index}`}
                 onChange={props.handleChange}
