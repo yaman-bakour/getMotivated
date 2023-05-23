@@ -125,8 +125,6 @@ const Forms = (props) => {
     function handleDragState(event){//handles weather the element is in a movable state or not
         const {type , target} = event;
 
-        console.log(type)
-
         if(type == "mousedown"){
             target.addEventListener("mousemove", handleDrag)                               
         }else if(type == "mouseup"){
