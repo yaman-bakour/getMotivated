@@ -10,6 +10,7 @@
     "@testing-library/user-event": "^13.5.0",
     "animejs": "^3.2.1",
     "bootstrap": "^4.6.0",
+    "color-namer": "^1.4.0",
     "cors": "^2.8.5",
     "dom-to-image": "^2.6.0",
     "get-system-fonts": "^2.0.2",

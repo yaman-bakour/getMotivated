@@ -12,6 +12,7 @@ const Qoutes = (props) => {
                 style={{position : "absolute",
                         left : "35%",
                         top : "5%",
+                        fontWeight : "bold",
                         color : props.input.color,
                         fontFamily : props.input.fontFamily,
                         fontSize : props.input.fontSize}}

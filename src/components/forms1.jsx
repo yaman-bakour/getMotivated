@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {SketchPicker} from "react-color"
+import {SketchPicker , CirclePicker} from "react-color"
 import domtoimage from "dom-to-image";
 import Button from 'react-bootstrap/Button';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
@@ -18,7 +18,7 @@ const Forms = (props) => {
 
     const [input , setInput] = React.useState({color:"black",
                                                 fontFamily:"",
-                                                fontSize : "",
+                                                fontSize:"24px",
                                                 qoutes: [""]})
 
     const [img , setImg] = React.useState("m6.jpg");
@@ -26,10 +26,14 @@ const Forms = (props) => {
     const popover = (
         <Popover id="popover-basic">
           <Popover.Body>
-          <SketchPicker
+          <CirclePicker
           color={input.color}
+          colors={["black","grey","brown","silver","green","lightgreen","darkgreen","blue","lightblue"
+          ,"yellow","red","darkred","cyan","pink","beige","purple","indigo","orange","darkorange","gold","violet"
+          ,"navy","lime","maroon","teal","olive","crimson","lavender","slateblue","magenta"]}
             onChange={function(color) {
-            setInput(prev => ({...prev , color : color.hex}))
+                let namer = require("color-namer")
+            setInput(prev => ({...prev , color : namer(color.hex).html[0].name}))
             }}/>
           </Popover.Body>
         </Popover>
@@ -153,19 +157,23 @@ const Forms = (props) => {
                 <h1 className='text-center'>Be an inspiration to the people around you and<br></br>
                 help the the people around you reach their dreams</h1>
        
-                <form className='row justify-content-around m-4' id='form'>
+                <form className='row no-gutters justify-content-around m-4' id='form'>
+
+                    <InputField 
+                    input={input}
+                    handleChange={handleChange}/>
 
                     <div className='col-md-5 m-3 p-0'>
                         <div className='input-group'>
-                            <OverlayTrigger trigger="click" placement="right" overlay={popover}>
+                            <OverlayTrigger trigger="click" placement="right" overlay={popover} rootClose>
                                 <Button id="color-btn" 
                                 style={{backgroundColor: input.color === "" ? "white" : input.color}}>
-
                                 </Button>
                             </OverlayTrigger>
                             <input 
                             type="text"
                             value={input.color}
+                            style={{color : input.color , fontWeight : "bold"}}
                             placeholder="Font color (e.g. darkblue (or) #a4b6c1)"
                             className='form-control'
                             name='color'
@@ -180,13 +188,14 @@ const Forms = (props) => {
                                     data-toggle="dropdown">fonts</button>
                                     <ul className='menu dropdown-menu'>
                                         {WSFonts.map(a => {
-                                            return <li className='dropdown-item' onClick={selectFont} key={a}>{a}</li>
+                                            return <li className='dropdown-item' onClick={selectFont} style={{fontFamily : a.toString()}} key={a}>{a}</li>
                                         })}
                                     </ul>
                             </div>
                             <input 
                             id='font' 
                             type="text"
+                            style={{fontFamily : input.fontFamily}}
                             value={input.fontFamily}
                             placeholder="Don't be afraid to try a unique font, it might work!"
                             className='form-control'
@@ -198,20 +207,17 @@ const Forms = (props) => {
                         </div>
                     </div>
 
-                    <input 
-                    type="text" 
-                    className='col-md-5 m-3'
-                    value={input.fontSize}
-                    placeholder="text size e.g. 16px"
-                    name='fontSize'
-                    onChange={handleChange}/>
+                    <div className='col-md-5 m-3 p-0 row no-gutters'>
+                        <div className={`col btn btn-outline-secondary p-1 ${input.fontSize == "16px" ? "active" : ""}`} onClick={() => {setInput((prev) => ({...prev , fontSize : "16px"}))}}>very small size</div>
+                        <div className={`col btn btn-outline-secondary p-1 ${input.fontSize == "20px" ? "active" : ""}`} onClick={() => {setInput((prev) => ({...prev , fontSize : "20px"}))}}>small size</div>
+                        <div className={`col btn btn-outline-secondary p-1 ${input.fontSize == "24px" ? "active" : ""}`} onClick={() => {setInput((prev) => ({...prev , fontSize : "24px"}))}}>medium size</div>
+                        <div className={`col btn btn-outline-secondary p-1 ${input.fontSize == "28px" ? "active" : ""}`} onClick={() => {setInput((prev) => ({...prev , fontSize : "28px"}))}}>large size</div>
+                        <div className={`col btn btn-outline-secondary p-1 ${input.fontSize == "32px" ? "active" : ""}`} onClick={() => {setInput((prev) => ({...prev , fontSize : "32px"}))}}>very large size</div>
+                    </div>
 
-                    <InputField 
-                    input={input}
-                    handleChange={handleChange}/>
                 </form>
 
-                <div className='row justify-content-between  m-3'>
+                <div className='row no-gutters justify-content-between m-3'>
                     <div className='col-md-2 col-3 btn btn-outline-secondary m-3' onClick={addQuote}>Add new quote</div>
                     <div className='col-md-2 col-3 btn btn-outline-danger m-3' onClick={deleteQoute}>delete last quote</div>
                     <button onClick={handleclick} className='button btn btn-block mb-3 bg-success text-light'>Generate different image</button>
