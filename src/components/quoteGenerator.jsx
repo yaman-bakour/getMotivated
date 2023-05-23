@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import domtoimage from "dom-to-image"
 
 const QuoteGenerator = (props) => {
 
@@ -30,6 +31,28 @@ const QuoteGenerator = (props) => {
         handleQuoteImage();
     }
 
+    function handleDownload(event){ //converts #quote-img div into dataURL and downloads it
+        event.preventDefault();
+
+        let quote = document.getElementById("quote-img");
+
+        domtoimage.toPng(quote)
+        .then(imageData => {
+
+            const a = Object.assign(document.createElement("a"),{
+                href : imageData,
+                download:"myimg.png",
+                style:"dispaly:none"
+            })
+
+            document.body.appendChild(a)
+        
+            a.click();
+
+            a.remove();
+        })
+    }
+
     return ( 
         <React.Fragment>
 
@@ -38,7 +61,7 @@ const QuoteGenerator = (props) => {
                 <div className='text-center' id='c'></div>
                 <div className='row no-gutters'>
                     <div className='col-xl-7 text-success'>
-                        <div className='quote-img text-center'>
+                        <div className='quote-img text-center' id='quote-img'>
                             <img className='w-100' src={require(`../imgs/${quoteImage}`)} alt="" id="img1"/>
                             <div className='quote' id='quote'>{quotes.content}</div>
                             <div className='author' id='author'>-{quotes.author}</div>
@@ -51,6 +74,7 @@ const QuoteGenerator = (props) => {
                         <h1 className='font-weight-bold'>Motivate yourself</h1>
 
                         <button onClick={Quote} className='btn btn-success m-3'>Get quote</button>
+                        <button onClick={handleDownload} className='btn btn-success m-3'>Download quote</button>
                         
                         <p className='text-success'>dont worry , it get better</p>
 
