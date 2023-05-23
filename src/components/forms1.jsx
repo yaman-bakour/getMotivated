@@ -125,14 +125,15 @@ const Forms = (props) => {
     function handleDragState(event){//handles weather the element is in a movable state or not
         const {type , target} = event;
 
+        console.log(type)
+
         if(type == "mousedown"){
             target.addEventListener("mousemove", handleDrag)                               
-
         }else if(type == "mouseup"){
                 target.removeEventListener("mousemove",handleDrag)
         }else if(type == "click"){
-            for(let i=0 ; i < document.getElementById("quote-img").childNodes.length;i++){
-                    document.getElementById("quote-img").childNodes[i].removeEventListener("mousemove",handleDrag)
+            for(let i=0 ; i < target.childNodes.length;i++){
+                   target.childNodes[i].removeEventListener("mousemove",handleDrag)
                 }
         }}
 
@@ -233,7 +234,7 @@ const Forms = (props) => {
                         handleDragState={handleDragState}
                         />
 
-                        <img className='c-img' id='img' src={require(`../imgs/${img}`)} alt="" onMouseUp={handleDragState}/>
+                        <img className='c-img' id='img' src={require(`../imgs/${img}`)} alt=""/>
                     </div>
                 </div>
 
