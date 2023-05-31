@@ -106,7 +106,7 @@ const Forms = (props) => {
     }
     function handleDrag(event){//handles moving the qoutes and keeping them
         if(event.type == "mousemove"){
-            
+
         const {target,movementX , movementY} = event; // within the image bounds                                        
         let img_height = document.getElementById("img").height,
             img_width = document.getElementById("img").width,
@@ -124,7 +124,7 @@ const Forms = (props) => {
 
         }else{
             var previousTouch;
-            document.getElementById("quote-img").addEventListener("touchmove", (e) => {
+            document.getElementById("root").addEventListener("touchmove", (e) => {
             const touch = e.touches[0];
 
             if (previousTouch) {
@@ -145,11 +145,11 @@ const Forms = (props) => {
                 quote_width = parseInt(styles.width),
                 quote_height = parseInt(styles.height);
             
-            if(left + movementX >= 0 &&  left + movementX <= img_width-quote_width &&
-                top + movementY >= 0 && top + movementY <= img_height-quote_height){
+            // if(left + movementX >= 0 &&  left + movementX <= img_width-quote_width &&
+            //     top + movementY >= 0 && top + movementY <= img_height-quote_height){
                 target.style.left = `${left + movementX}px`;
                 target.style.top = `${top + movementY}px`;
-                }
+                // }
             })
         }
     }
