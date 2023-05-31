@@ -145,11 +145,11 @@ const Forms = (props) => {
                 quote_width = parseInt(styles.width),
                 quote_height = parseInt(styles.height);
             
-            if(left + movementX >= 0 &&  left + movementX <= img_width-quote_width &&
-                top + movementY >= 0 && top + movementY <= img_height-quote_height){
-                target.style.left = `${left + movementX}px`;
-                target.style.top = `${top + movementY}px`;
-                }
+            // if(left + movementX >= 0 &&  left + movementX <= img_width-quote_width &&
+            //     top + movementY >= 0 && top + movementY <= img_height-quote_height){
+            //     target.style.left = `${left + movementX}px`;
+            //     target.style.top = `${top + movementY}px`;
+            //     }
             })
         }
     }
