@@ -105,8 +105,9 @@ const Forms = (props) => {
         })
     }
     function handleDrag(event){//handles moving the qoutes and keeping them
-        const {target,movementX , movementY} = event; // within the image bounds
-                                                    
+        if(event.type == "mousemove"){
+            
+        const {target,movementX , movementY} = event; // within the image bounds                                        
         let img_height = document.getElementById("img").height,
             img_width = document.getElementById("img").width,
             styles = window.getComputedStyle(target),
@@ -119,6 +120,37 @@ const Forms = (props) => {
             top + movementY >= 0 && top + movementY <= img_height-quote_height){
             target.style.left = `${left + movementX}px`;
             target.style.top = `${top + movementY}px`;
+            }
+
+        }else{
+            var previousTouch;
+            document.getElementById("quote-img").addEventListener("touchmove", (e) => {
+            const touch = e.touches[0];
+
+            if (previousTouch) {
+            // be aware that these only store the movement of the first touch in the touches array
+            e.movementX = touch.pageX - previousTouch.pageX;
+            e.movementY = touch.pageY - previousTouch.pageY;
+            };
+
+            previousTouch = touch;
+
+            const {target,movementX , movementY} = e; // within the image bounds
+                                                    
+            let img_height = document.getElementById("img").height,
+                img_width = document.getElementById("img").width,
+                styles = window.getComputedStyle(target),
+                left = parseInt(styles.left), 
+                top = parseInt(styles.top), 
+                quote_width = parseInt(styles.width),
+                quote_height = parseInt(styles.height);
+            
+            if(left + movementX >= 0 &&  left + movementX <= img_width-quote_width &&
+                top + movementY >= 0 && top + movementY <= img_height-quote_height){
+                target.style.left = `${left + movementX}px`;
+                target.style.top = `${top + movementY}px`;
+                }
+            })
         }
     }
 
@@ -132,11 +164,14 @@ const Forms = (props) => {
         }else if(type == "mouseup"){
                 target.removeEventListener("mousemove",handleDrag)
         }else if(type == "touchend"){
-            target.addEventListener("touchmove", handleDrag) 
+            target.removeEventListener("touchmove", handleDrag) 
         }else if(type == "click"){
             for(let i=0 ; i < target.childNodes.length;i++){
                    target.childNodes[i].removeEventListener("mousemove",handleDrag)
                 }
+            for(let i=0 ; i < target.parentNode.childNodes.length;i++){
+                target.parentNode.childNodes[i].removeEventListener("mousemove",handleDrag)
+            }
         }}
 
     function selectFont(event){
@@ -168,7 +203,7 @@ const Forms = (props) => {
                         handleDragState={handleDragState}
                         />
 
-                        <img className='c-img' id='img' src={require(`../imgs/${img}`)} alt=""/>
+                        <img onClick={handleDragState} className='c-img' id='img' src={require(`../imgs/${img}`)} alt=""/>
                     </div>
                 </div>
 
