@@ -135,15 +135,18 @@ const Forms = (props) => {
 
             previousTouch = touch;
 
-            const {target,movementX , movementY} = e; // within the image bounds
+            const {movementX , movementY} = e;
+            const {target} = event; // within the image bounds
                                                     
             let img_height = document.getElementById("img").height,
                 img_width = document.getElementById("img").width,
-                styles = window.getComputedStyle(event.target),
+                styles = window.getComputedStyle(target),
                 left = parseInt(styles.left), 
                 top = parseInt(styles.top), 
                 quote_width = parseInt(styles.width),
                 quote_height = parseInt(styles.height);
+
+            console.log(target , movementX , movementY)
             
             // if(left + movementX >= 0 &&  left + movementX <= img_width-quote_width &&
             //     top + movementY >= 0 && top + movementY <= img_height-quote_height){
