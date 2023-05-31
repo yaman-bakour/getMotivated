@@ -139,17 +139,17 @@ const Forms = (props) => {
                                                     
             let img_height = document.getElementById("img").height,
                 img_width = document.getElementById("img").width,
-                styles = window.getComputedStyle(target),
+                styles = window.getComputedStyle(event.target),
                 left = parseInt(styles.left), 
                 top = parseInt(styles.top), 
                 quote_width = parseInt(styles.width),
                 quote_height = parseInt(styles.height);
             
-            // if(left + movementX >= 0 &&  left + movementX <= img_width-quote_width &&
-            //     top + movementY >= 0 && top + movementY <= img_height-quote_height){
+            if(left + movementX >= 0 &&  left + movementX <= img_width-quote_width &&
+                top + movementY >= 0 && top + movementY <= img_height-quote_height){
                 target.style.left = `${left + movementX}px`;
                 target.style.top = `${top + movementY}px`;
-                // }
+                }
             })
         }
     }
