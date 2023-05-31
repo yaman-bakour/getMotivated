@@ -8,7 +8,9 @@ const Qoutes = (props) => {
                 <p
                 key={index}
                 onMouseDown={props.handleDragState}
+                onTouchStart={props.handleDragState}
                 onMouseUp={props.handleDragState}
+                onTouchEnd={props.handleDragState}
                 style={{position : "absolute",
                         left : "35%",
                         top : "5%",

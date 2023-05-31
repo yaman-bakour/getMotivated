@@ -1,8 +1,8 @@
 export default[
     "m1.jpg",
-    "m2.jpg",
-    "m3.jpg",
-    "m4.webp",
+    "m2.webp",
+    "m3.jpeg",
+    "m4.jpg",
     "m5.jpg",
     "m6.jpg",
     "m7.jpg",

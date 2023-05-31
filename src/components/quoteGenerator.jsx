@@ -59,22 +59,20 @@ const QuoteGenerator = (props) => {
             <div className='motivate w-100 bg-success fw-bold p-4 text-center'>Motivate youself</div>
 
                 <div className='text-center' id='c'></div>
-                <div className='row no-gutters'>
-                    <div className='col-xl-7 text-success'>
                         <div className='quote-img text-center' id='quote-img'>
                             <img className='w-100' src={require(`../imgs/${quoteImage}`)} alt="" id="img1"/>
                             <div className='quote' id='quote'>{quotes.content}</div>
                             <div className='author' id='author'>-{quotes.author}</div>
                         </div>
+
+                    <div className='row no-gutters w-100'>
+                        <button onClick={Quote} className='col btn btn-success m-3'>New quote</button>
+                        <button onClick={handleDownload} className='col btn btn-success m-3'>Download quote</button>
                     </div>
-                    
-                    <div className='col-xl-5 about-quote p-5'>
+                        <div className='about-quote p-3'>
                         <p className='text-success'>Lack motivation?</p>
 
                         <h1 className='font-weight-bold'>Motivate yourself</h1>
-
-                        <button onClick={Quote} className='btn btn-success m-3'>Get quote</button>
-                        <button onClick={handleDownload} className='btn btn-success m-3'>Download quote</button>
                         
                         <p className='text-success'>dont worry , it get better</p>
 
@@ -89,8 +87,7 @@ const QuoteGenerator = (props) => {
                             to take ownership of your life. You start to design 
                             your life to turnout whatever way you want it to.
                         </p>
-                    </div>
-                </div>
+                        </div>
 
         </React.Fragment>
      );

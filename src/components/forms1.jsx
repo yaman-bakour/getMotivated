@@ -127,8 +127,12 @@ const Forms = (props) => {
 
         if(type == "mousedown"){
             target.addEventListener("mousemove", handleDrag)                               
+        }else if(type == "touchstart"){
+            target.addEventListener("touchmove", handleDrag) 
         }else if(type == "mouseup"){
                 target.removeEventListener("mousemove",handleDrag)
+        }else if(type == "touchend"){
+            target.addEventListener("touchmove", handleDrag) 
         }else if(type == "click"){
             for(let i=0 ; i < target.childNodes.length;i++){
                    target.childNodes[i].removeEventListener("mousemove",handleDrag)
@@ -153,10 +157,27 @@ const Forms = (props) => {
     return ( 
         <React.Fragment>
 
-                <h1 className='text-center'>Be an inspiration to the people around you and<br></br>
-                help the the people around you reach their dreams</h1>
-       
-                <form className='row no-gutters justify-content-around m-4' id='form'>
+                <h1 className='text-center'>Be an inspiration to the people around you with your own quotes!</h1>
+                
+                <div className='quote-img w-100 text-center'>
+                    <h3 className='text-dark'>you don't like the position of the quotes? try moving them!</h3>
+                    <div className='mx-auto d-inline-block' id='quote-img' style={{position: "relative"}} onClick={handleDragState}>
+
+                        <Qoutes 
+                        input={input}
+                        handleDragState={handleDragState}
+                        />
+
+                        <img className='c-img' id='img' src={require(`../imgs/${img}`)} alt=""/>
+                    </div>
+                </div>
+
+                <div className='container-fluid pt-2'>
+                    <button onClick={handleclick} className='button btn btn-block mb-3 bg-success text-light'>Generate different image</button>
+                        <button onClick={handleDownload} className='button btn btn-block mb-3 bg-success text-light'>download image</button>
+                </div>
+
+                <form className='row no-gutters justify-content-around' id='form'>
 
                     <InputField 
                     input={input}
@@ -179,7 +200,7 @@ const Forms = (props) => {
                             onChange={handleChange} />
                         </div>
                     </div>
-                    
+
                     <div className='col-md-5 m-3 p-0'>
                             <div className='input-group'>
                                 <div className='input-group-prepend'>
@@ -214,33 +235,13 @@ const Forms = (props) => {
                         <div className={`col btn btn-outline-secondary p-1 ${input.fontSize == "32px" ? "active" : ""}`} onClick={() => {setInput((prev) => ({...prev , fontSize : "32px"}))}}>very large size</div>
                     </div>
 
-                </form>
+                    </form>
 
-                <div className='row no-gutters justify-content-between m-3'>
+                    <div className='row no-gutters justify-content-between m-3'>
                     <div className='col-md-2 col-3 btn btn-outline-secondary m-3' onClick={addQuote}>Add new quote</div>
                     <div className='col-md-2 col-3 btn btn-outline-danger m-3' onClick={deleteQoute}>delete last quote</div>
-                    <button onClick={handleclick} className='button btn btn-block mb-3 bg-success text-light'>Generate different image</button>
-                </div>
-
-                
-                <div className='quote-img w-100 text-center'>
-                    <h1 className='text-dark'>you don't like the position of the quotes? try moving them!</h1>
-                    <div className='mx-auto d-inline-block' id='quote-img' style={{position: "relative"}} onClick={handleDragState}>
-
-                        <Qoutes 
-                        input={input}
-                        handleDragState={handleDragState}
-                        />
-
-                        <img className='c-img' id='img' src={require(`../imgs/${img}`)} alt=""/>
                     </div>
-                </div>
-
-                <div className='container-fluid p-4'>
-                    <button onClick={handleDownload} className='button btn btn-block mb-3 bg-success text-light'>download image</button>
-                </div>
-
-            
+                                
         </React.Fragment>
      );
 }
